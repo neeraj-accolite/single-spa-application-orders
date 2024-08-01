@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import {getOrderDetails, getProfileDetails, OrderDetail, Profile} from '@acc/api';
 import { useParams } from 'react-router-dom';
 
-function App(props) {
-  const [isLoading, setLoading] = useState<Boolean>(true);
+function App() {
+  const [isLoading, setLoading] = useState<boolean>(true);
   const [user, setData] = useState<Profile | null>(null);
   const [orders, setOrders] = useState<OrderDetail | null>(null);
   const params = useParams<{id:string}>();
