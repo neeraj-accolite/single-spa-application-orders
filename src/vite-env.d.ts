@@ -22,8 +22,28 @@ declare module "@acc/api" {
         totalQuantity: number;
     }
 
+    export interface ProductsDetail {
+        total: number;
+        products: Product[];
+    }
+
+    export interface Product {
+        id: string;
+        title: string;
+        description: string;
+        category: string;
+        brand: string;
+        price: number;
+        rating: string;
+        thumbnail: string;
+        discountPercentage: number;
+    }
+
     const getProfileDetails: (id: number) => Promise<{
         data: Profile;
     }>;
+
+    const getProducts: (limit?: number) => Promise<ProductsDetail>;
+
     const getOrderDetails: (id: number) => Promise<OrderDetail>;
 }
